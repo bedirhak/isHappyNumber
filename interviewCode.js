@@ -29,15 +29,14 @@
         sum += digit * digit;
         }); 
         if (sum === 1){
-            result = true
-            return result;
+            return true;
         } else if (howManyTimes >= 10){
-            result = false
-            return result;
+            return false;
         }
         else{
             result = isHappy(sum);
         }
+        
         return result;
     }
 
