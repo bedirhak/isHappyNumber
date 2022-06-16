@@ -29,17 +29,17 @@
         }); 
         if (sum === 1){
             return true;
-        } else if (isInclude.includes(digits)){
+        } else if (isInclude.includes(sum)){
             return false;
         }
         else{
-            isInclude.push(digits.sort());
+            isInclude.push(sum)
             result = isHappy(sum);
         }
         
         return result;
     }
 
-    console.log(isHappy(19));
+    console.log(isHappy(25));
     
     
