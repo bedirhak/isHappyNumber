@@ -8,6 +8,7 @@
     6^2 + 8^2 = 36 + 64 = 100
     1^2 + 0^2 + 0^2 = 1 */
 
+    var isInclude = [];
     const foundDigits = (number) => {
         var digits = [];
         while (number !== 0) {
@@ -17,10 +18,8 @@
         }
         return digits;
     };
-    var howManyTimes = 0;
     
     function isHappy(number) {
-        howManyTimes++;
         var result = false;
         var sum = number;
         var digits = foundDigits(sum);
@@ -30,10 +29,11 @@
         }); 
         if (sum === 1){
             return true;
-        } else if (howManyTimes >= 10){
+        } else if (isInclude.includes(digits)){
             return false;
         }
         else{
+            isInclude.push(digits.sort());
             result = isHappy(sum);
         }
         
